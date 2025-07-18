@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Phantom by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+							<a href="../Biblioteca/index.html" class="button small" style="float:right;margin-top:10px;" id="biblioteca-btn">Biblioteca</a>
+							<script>
+							// Corrige o caminho do botão Biblioteca para funcionar em qualquer subpasta
+							(function() {
+							  var btn = document.getElementById('biblioteca-btn');
+							  if (!btn) return;
+							  var testPaths = [
+								'../Biblioteca/index.html',
+								'../../Biblioteca/index.html',
+								'Biblioteca/index.html',
+								'/Materiais/Biblioteca/index.html'
+							  ];
+							  function testNext(i) {
+								if (i >= testPaths.length) return;
+								var xhr = new XMLHttpRequest();
+								xhr.open('HEAD', testPaths[i], true);
+								xhr.onload = function() {
+								  if (xhr.status >= 200 && xhr.status < 400) {
+									btn.href = testPaths[i];
+								  } else {
+									testNext(i+1);
+								  }
+								};
+								xhr.onerror = function() { testNext(i+1); };
+								xhr.send();
+							  }
+							  testNext(0);
+							})();
+							</script>
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Ipsum veroeros</a></li>
+							<li><a href="generic.html">Tempus etiam</a></li>
+							<li><a href="generic.html">Consequat dolor</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1 id="dynamic-title">Kingdom Hearts 1.5</h1>
+							<span class="image main" id="dynamic-image"></span>
+							<p id="dynamic-desc-1"></p>
+							<p id="dynamic-desc-2"></p>
+							<script>
+							// Exibe a imagem da pasta images conforme o parâmetro ?img= na URL, define o título e descrição dinâmicos
+							(function() {
+							  var params = new URLSearchParams(window.location.search);
+							  var img = params.get('img');
+							  var imgEl = document.createElement('img');
+							  var imgSrc;
+							  var title = 'Kingdom Hearts 1.5';
+							  var desc1 = '';
+							  var desc2 = '';
+							  if (img === 'Kh1.5.png') {
+								imgSrc = 'images/Kh1.5Slider.png';
+								title = 'Kingdom Hearts 1.5';
+								desc1 = 'Lançamento na Steam: 13 de junho de 2024';
+								desc2 = 'Inclui Kingdom Hearts HD 1.5 + 2.5 ReMIX.';
+							  } else if (img === 'Kh3.png') {
+								imgSrc = 'images/Kh3Slider.jpg';
+								title = 'Kingdom Hearts 3';
+								desc1 = 'Lançamento na Steam: 13 de junho de 2024';
+								desc2 = 'A conclusão da saga de Xehanort.';
+							  } else if (img && (img.toLowerCase() === 'khfcp.png' || img.toLowerCase() === 'khfcp.jpg')) {
+								imgSrc = 'images/KhFcPSlider.jpg';
+								title = 'Kingdom Hearts Final Chapter Prologue';
+								desc1 = 'Lançamento na Steam: 13 de junho de 2024';
+								desc2 = 'Coleção especial com capítulos essenciais.';
+							  } else if (img === 'MhRise.jpg') {
+								imgSrc = 'images/MhRise.jpg';
+								title = 'Monster Hunter Rise';
+								desc1 = 'Lançamento na Steam: 12 de janeiro de 2022';
+								desc2 = 'Aventure-se em Kamura Village.';
+							  } else if (img === 'MhStories.jpg') {
+								imgSrc = 'images/MhStories.jpg';
+								title = 'Monster Hunter Stories';
+								desc1 = 'Lançamento na Steam: 14 de junho de 2024';
+								desc2 = 'RPG de turnos no universo Monster Hunter.';
+							  } else if (img === 'MhStories2.jpg') {
+								imgSrc = 'images/MhStories2.jpg';
+								title = 'Monster Hunter Stories 2';
+								desc1 = 'Lançamento na Steam: 8 de julho de 2021';
+								desc2 = 'Wings of Ruin, continuação da saga.';
+							  } else if (img === 'MhWilds.jpg') {
+								imgSrc = 'images/MhWilds.jpg';
+								title = 'Monster Hunter Wilds';
+								desc1 = 'Lançamento na Steam: Previsto para 2025';
+								desc2 = 'Nova geração da franquia Monster Hunter.';
+							  } else if (img === 'MhWorld.jpg') {
+								imgSrc = 'images/MhWorld.jpg';
+								title = 'Monster Hunter World';
+								desc1 = 'Lançamento na Steam: 9 de agosto de 2018';
+								desc2 = 'Explore o Novo Mundo e enfrente monstros épicos.';
+							  } else {
+								imgSrc = img ? ('images/' + img) : 'images/Kh1.5Slider.png';
+								desc1 = 'Selecione um jogo para ver a data de lançamento na Steam.';
+							  }
+							  document.getElementById('dynamic-title').textContent = title;
+							  document.getElementById('dynamic-desc-1').textContent = desc1;
+							  document.getElementById('dynamic-desc-2').textContent = desc2;
+							  imgEl.src = imgSrc;
+							  imgEl.alt = '';
+							  imgEl.style.width = '100%';
+							  imgEl.style.height = '350px';
+							  imgEl.style.objectFit = 'cover';
+							  imgEl.style.display = 'block';
+							  imgEl.style.margin = '0 auto 24px auto';
+							  imgEl.onerror = function() {
+								this.style.display = 'none';
+								var msg = document.createElement('div');
+								msg.textContent = 'Imagem não encontrada: ' + imgSrc;
+								msg.style.color = 'red';
+								msg.style.textAlign = 'center';
+								msg.style.margin = '0 auto 24px auto';
+								document.getElementById('dynamic-image').appendChild(msg);
+							  };
+							  document.getElementById('dynamic-image').appendChild(imgEl);
+							})();
+							</script>
+						</div>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

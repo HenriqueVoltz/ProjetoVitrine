@@ -1,0 +1,20 @@
+Zona de Update 
+https://html5up.net/phantom
+
+Carrossel 
+https://startbootstrap.com/template/business-frontpage
+
+Descrição Game 
+https://startbootstrap.com/template/shop-item
+
+Biblioteca 
+https://startbootstrap.com/previews/shop-homepage
+
+Registro 
+https://mdbootstrap.com/docs/standard/extended/registration/
+
+Login/Registro 
+https://mdbootstrap.com/docs/standard/extended/login/
+
+Esqueceu Senha 
+https://mdbootstrap.com/docs/standard/extended/password-reset-template/
