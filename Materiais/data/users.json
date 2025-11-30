@@ -1,0 +1,14 @@
+[
+    {
+        "username": "P.E.corp",
+        "email": "admin@example.com",
+        "password": "$2y$10$PZmEXXA8rTiBbh9Z3Agv8eqDbRH4SS7YVTY1xXdt2HFdx6D9JVSde",
+        "role": "admin"
+    },
+    {
+        "username": "HenriqueVoltz",
+        "email": "henrique@gmail.com",
+        "password": "$2y$10$mltjovXrJUF9pmga87G4NueLi6SZoCfW1AcyeOhDH5jlYUeJAegwm",
+        "role": "user"
+    }
+]
